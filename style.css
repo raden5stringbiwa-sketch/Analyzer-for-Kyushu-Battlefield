@@ -1,1 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+
+    background:#111;
+    color:white;
+
+    font-family:
+        "Yu Gothic UI",
+        sans-serif;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:5px;
+
+}
+
+.version{
+
+    text-align:center;
+
+    color:#999;
+
+    margin-bottom:25px;
+
+}
+
+.card{
+
+    background:#1f1f1f;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+.card h2{
+
+    margin-bottom:15px;
+
+}
+
+#preview{
+
+    width:100%;
+
+    display:none;
+
+    border-radius:10px;
+
+}
+
+#result{
+
+    font-size:20px;
+
+    color:#FFD54F;
+
+}
