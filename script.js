@@ -29,6 +29,12 @@ const analyzeButton =
 const result =
     document.getElementById("result");
 
+const cropCanvas =
+    document.getElementById("cropCanvas");
+
+const cropCtx =
+    cropCanvas.getContext("2d");
+
 analyzeButton.addEventListener("click", async function () {
 
     if (!preview.src) {
@@ -42,14 +48,38 @@ analyzeButton.addEventListener("click", async function () {
     result.textContent =
         "解析中・・・";
 
-    const data =
-        await Tesseract.recognize(
+// 元画像
+const img = preview;
 
-            preview.src,
+// 切り抜く範囲
+const x = 450;
+const y = 200;
+const width = 350;
+const height = 250;
 
-            "eng"
+// Canvasサイズ
+cropCanvas.width = width;
+cropCanvas.height = height;
 
-        );
+// 切り抜き
+cropCtx.drawImage(
+    img,
+    x,
+    y,
+    width,
+    height,
+    0,
+    0,
+    width,
+    height
+);
+
+// OCR
+const data =
+    await Tesseract.recognize(
+        cropCanvas,
+        "eng"
+    );
 
     result.textContent =
         data.data.text;
