@@ -10,11 +10,11 @@ const areas = [
     name: "west",
     canvas: "westCanvas",
 
-    x: 120,
-    y: 280,
+    x: 180, 
+    y: 320,  
 
     width: 220,
-    height: 360
+    height: 380
 },
 
     {
