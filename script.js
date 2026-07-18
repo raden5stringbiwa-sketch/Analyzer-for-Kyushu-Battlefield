@@ -101,6 +101,17 @@ for (const area of areas){
 
     cropArea(img, area);
 
+    const canvas =
+        document.getElementById(area.canvas);
+
+    const owner =
+        detectOwner(canvas);
+
+    console.log(
+        area.name,
+        owner
+    );
+
 }
 
 // OCR（まだ仮）
@@ -141,3 +152,51 @@ function cropArea(image, area){
     );
 
 }
+
+function detectOwner(canvas){
+
+    const ctx = canvas.getContext("2d");
+
+    const imageData =
+        ctx.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+    let blue = 0;
+    let red = 0;
+    let white = 0;
+
+    const data = imageData.data;
+
+    for(let i = 0; i < data.length; i += 4){
+
+        const r = data[i];
+        const g = data[i+1];
+        const b = data[i+2];
+
+        if(b > r * 1.3 && b > g * 1.1){
+            blue++;
+        }
+        else if(r > b * 1.3 && r > g * 1.1){
+            red++;
+        }
+        else if(r > 180 && g > 180 && b > 180){
+            white++;
+        }
+
+    }
+
+    if(blue > red && blue > white){
+        return "青";
+    }
+
+    if(red > blue && red > white){
+        return "赤";
+    }
+
+    return "白";
+}
+
