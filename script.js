@@ -11,7 +11,7 @@ const areas = [
     canvas: "westCanvas",
 
     x: 650, 
-    y: 350,  
+    y: 380,  
 
     width: 220,
     height: 380
