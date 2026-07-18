@@ -78,12 +78,6 @@ const analyzeButton =
 const result =
     document.getElementById("result");
 
-const cropCanvas =
-    document.getElementById("cropCanvas");
-
-const cropCtx =
-    cropCanvas.getContext("2d");
-
 analyzeButton.addEventListener("click", async function () {
 
     if (!preview.src) {
