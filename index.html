@@ -42,18 +42,46 @@
     </button>
     </div>
 
-    <div class="card">
-　　<h2>切り抜き画像</h2>
-　　<canvas id="cropCanvas"></canvas>
-        <h2>解析結果</h2>
+ <div class="card">
 
-        <div id="result">
+    <h2>切り抜き画像</h2>
 
-            まだ解析していません
+    <div class="crop-area">
 
+        <div>
+            <h3>① 西</h3>
+            <canvas id="westCanvas"></canvas>
+        </div>
+
+        <div>
+            <h3>② 北</h3>
+            <canvas id="northCanvas"></canvas>
+        </div>
+
+        <div>
+            <h3>③ 中央</h3>
+            <canvas id="centerCanvas"></canvas>
+        </div>
+
+        <div>
+            <h3>④ 南</h3>
+            <canvas id="southCanvas"></canvas>
+        </div>
+
+        <div>
+            <h3>⑤ 東</h3>
+            <canvas id="eastCanvas"></canvas>
         </div>
 
     </div>
+
+    <h2>解析結果</h2>
+
+    <pre id="result"></pre>
+
+</div>
+      
+</div>
 
 </div>
 <script src="https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"></script>
