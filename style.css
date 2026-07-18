@@ -95,3 +95,62 @@ h1{
     z-index:1000;
 
 }
+.crop-area{
+
+    display:grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-rows: auto auto auto;
+
+    gap:15px;
+
+    text-align:center;
+
+}
+
+
+/* 配置 */
+
+.crop-area > div:nth-child(1){
+    grid-column:1;
+    grid-row:2;
+}
+/* 西 */
+
+
+.crop-area > div:nth-child(2){
+    grid-column:2;
+    grid-row:1;
+}
+/* 北 */
+
+
+.crop-area > div:nth-child(3){
+    grid-column:2;
+    grid-row:2;
+}
+/* 中央 */
+
+
+.crop-area > div:nth-child(4){
+    grid-column:2;
+    grid-row:3;
+}
+/* 南 */
+
+
+.crop-area > div:nth-child(5){
+    grid-column:3;
+    grid-row:2;
+}
+/* 東 */
+
+
+.crop-area canvas{
+
+    width:100%;
+
+    max-width:220px;
+
+}
