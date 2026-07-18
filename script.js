@@ -168,6 +168,7 @@ function detectOwner(canvas){
     let blue = 0;
     let red = 0;
     let white = 0;
+    let green = 0;
 
     const data = imageData.data;
 
@@ -177,25 +178,51 @@ function detectOwner(canvas){
         const g = data[i+1];
         const b = data[i+2];
 
-        if(b > r * 1.3 && b > g * 1.1){
+
+        // 緑の平地は除外
+        if(g > r * 1.15 && g > b * 1.15){
+            green++;
+            continue;
+        }
+
+
+        // 青同盟
+        if(b > r * 1.2 && b > g * 1.05){
             blue++;
         }
-        else if(r > b * 1.3 && r > g * 1.1){
+
+
+        // 赤同盟
+        else if(r > b * 1.2 && r > g * 1.05){
             red++;
         }
+
+
+        // 白系（未取得候補）
         else if(r > 180 && g > 180 && b > 180){
             white++;
         }
 
     }
 
-    if(blue > red && blue > white){
+
+    console.log({
+        blue,
+        red,
+        white,
+        green
+    });
+
+
+    if(blue > red && blue > 50){
         return "青";
     }
 
-    if(red > blue && red > white){
+
+    if(red > blue && red > 50){
         return "赤";
     }
+
 
     return "白";
 }
