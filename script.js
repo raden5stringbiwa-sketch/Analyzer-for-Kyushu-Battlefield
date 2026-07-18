@@ -6,14 +6,16 @@ const preview =
 
 const areas = [
 
-    {
-        name: "west",
-        canvas: "westCanvas",
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
-    },
+  {
+    name: "west",
+    canvas: "westCanvas",
+
+    x: 20,
+    y: 250,
+
+    width: 220,
+    height: 180
+}
 
     {
         name: "north",
