@@ -4,6 +4,55 @@ const imageInput =
 const preview =
     document.getElementById("preview");
 
+const areas = [
+
+    {
+        name: "west",
+        canvas: "westCanvas",
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+    },
+
+    {
+        name: "north",
+        canvas: "northCanvas",
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+    },
+
+    {
+        name: "center",
+        canvas: "centerCanvas",
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+    },
+
+    {
+        name: "south",
+        canvas: "southCanvas",
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+    },
+
+    {
+        name: "east",
+        canvas: "eastCanvas",
+        x: 0,
+        y: 0,
+        width: 0,
+        height: 0
+    }
+
+];
+
 imageInput.addEventListener("change", function () {
 
     const file = this.files[0];
@@ -51,37 +100,48 @@ analyzeButton.addEventListener("click", async function () {
 // 元画像
 const img = preview;
 
-// 切り抜く範囲
-const x = 450;
-const y = 200;
-const width = 350;
-const height = 250;
+// 5分割表示
+for (const area of areas){
 
-// Canvasサイズ
-cropCanvas.width = width;
-cropCanvas.height = height;
+    cropArea(img, area);
 
-// 切り抜き
-cropCtx.drawImage(
-    img,
-    x,
-    y,
-    width,
-    height,
-    0,
-    0,
-    width,
-    height
-);
+}
 
-// OCR
-const data =
-    await Tesseract.recognize(
-        cropCanvas,
-        "eng"
-    );
+// OCR（まだ仮）
+result.textContent =
+    "5エリア切り抜き完了";
 
-    result.textContent =
-        data.data.text;
+
 
 });
+function cropArea(image, area){
+
+    const canvas =
+        document.getElementById(area.canvas);
+
+    const ctx =
+        canvas.getContext("2d");
+
+    canvas.width =
+        area.width;
+
+    canvas.height =
+        area.height;
+
+    ctx.drawImage(
+
+        image,
+
+        area.x,
+        area.y,
+        area.width,
+        area.height,
+
+        0,
+        0,
+        area.width,
+        area.height
+
+    );
+
+}
