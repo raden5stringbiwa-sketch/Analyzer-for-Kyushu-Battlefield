@@ -99,6 +99,10 @@ const img = preview;
 // 5分割表示
 for (const area of areas){
 
+    if(area.width === 0 || area.height === 0){
+        continue;
+    }
+
     cropArea(img, area);
 
     const canvas =
