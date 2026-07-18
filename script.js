@@ -96,7 +96,11 @@ analyzeButton.addEventListener("click", async function () {
 // 元画像
 const img = preview;
 
-// 5分割表示
+
+
+// OCR（まだ仮）
+let output = "解析結果\n";
+
 for (const area of areas){
 
     if(area.width === 0 || area.height === 0){
@@ -111,16 +115,12 @@ for (const area of areas){
     const owner =
         detectOwner(canvas);
 
-    console.log(
-        area.name,
-        owner
-    );
+    output +=
+        area.name + " : " + owner + "\n";
 
 }
 
-// OCR（まだ仮）
-result.textContent =
-    "5エリア切り抜き完了";
+result.textContent = output;
 
 
 
