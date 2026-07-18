@@ -15,7 +15,7 @@ const areas = [
 
     width: 220,
     height: 180
-}
+},
 
     {
         name: "north",
