@@ -5,54 +5,131 @@ const preview =
     document.getElementById("preview");
 
 const areas = [
+  {
+    name: "西_矢倉",
+    type: "矢倉",
+    point: 2,
+    unlockTime: 0,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "西_療養所",
+    type: "療養所",
+    point: 2,
+    unlockTime: 0,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
 
   {
-    name: "west",
-    canvas: "westCanvas",
+    name: "北_1城",
+    type: "城",
+    point: 28,
+    unlockTime: 2100,
+    maxPoint: 25200,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "北_2城",
+    type: "城",
+    point: 28,
+    unlockTime: 900,
+    maxPoint: 25200,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
 
-    x: 650, 
-    y: 380,  
+  {
+    name: "中央_左望楼",
+    type: "望楼",
+    point: 10,
+    unlockTime: 420,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "中央_右望楼",
+    type: "望楼",
+    point: 10,
+    unlockTime: 420,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "中央拠点",
+    type: "拠点",
+    point: 36,
+    unlockTime: 1620,
+    maxPoint: 65000,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
 
-    width: 220,
-    height: 380
-},
+  {
+    name: "南_3城",
+    type: "城",
+    point: 28,
+    unlockTime: 900,
+    maxPoint: 25200,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "南_4城",
+    type: "城",
+    point: 28,
+    unlockTime: 2100,
+    maxPoint: 25200,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
 
-    {
-        name: "north",
-        canvas: "northCanvas",
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
-    },
-
-    {
-        name: "center",
-        canvas: "centerCanvas",
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
-    },
-
-    {
-        name: "south",
-        canvas: "southCanvas",
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
-    },
-
-    {
-        name: "east",
-        canvas: "eastCanvas",
-        x: 0,
-        y: 0,
-        width: 0,
-        height: 0
-    }
-
+  {
+    name: "東_矢倉",
+    type: "矢倉",
+    point: 2,
+    unlockTime: 0,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  },
+  {
+    name: "東_療養所",
+    type: "療養所",
+    point: 2,
+    unlockTime: 0,
+    maxPoint: null,
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+  }
 ];
 
 imageInput.addEventListener("change", function () {
