@@ -139,12 +139,12 @@ areas.forEach((area, index) => {
 
     area.canvas = "canvas_" + index;
 
-    cropAreaElement.innerHTML += `
-        <div>
-            <h3>${index + 1} ${area.name}</h3>
-            <canvas id="${area.canvas}"></canvas>
-        </div>
-    `;
+cropAreaElement.innerHTML += `
+    <div class="facility facility-${index}">
+        <h3>${index + 1} ${area.name}</h3>
+        <canvas id="${area.canvas}"></canvas>
+    </div>
+`;
 
 });
 imageInput.addEventListener("change", function () {
