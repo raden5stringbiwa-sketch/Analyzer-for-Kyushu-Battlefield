@@ -131,7 +131,22 @@ const areas = [
     height: 0
   }
 ];
+const cropAreaElement =
+    document.getElementById("cropArea");
 
+
+areas.forEach((area, index) => {
+
+    area.canvas = "canvas_" + index;
+
+    cropAreaElement.innerHTML += `
+        <div>
+            <h3>${index + 1} ${area.name}</h3>
+            <canvas id="${area.canvas}"></canvas>
+        </div>
+    `;
+
+});
 imageInput.addEventListener("change", function () {
 
     const file = this.files[0];
@@ -180,9 +195,10 @@ let output = "解析結果\n";
 
 for (const area of areas){
 
-    if(area.width === 0 || area.height === 0){
-        continue;
-    }
+if(area.width === 0 || area.height === 0){
+    output += area.name + " : 座標未設定\n";
+    continue;
+}
 
     cropArea(img, area);
 
@@ -192,6 +208,8 @@ for (const area of areas){
     const owner =
         detectOwner(canvas);
 
+area.owner = owner;
+    
     output +=
         area.name + " : " + owner + "\n";
 
