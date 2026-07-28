@@ -4,6 +4,20 @@ const imageInput =
 const preview =
     document.getElementById("preview");
 
+const measureCanvas =
+    document.getElementById("measureCanvas");
+
+const measureInfo =
+    document.getElementById("measureInfo");
+
+const measureCtx =
+    measureCanvas.getContext("2d");
+
+let startX;
+let startY;
+let dragging = false;
+
+
 const areas = [
   {
     name: "西_矢倉",
@@ -154,6 +168,21 @@ imageInput.addEventListener("change", function () {
     if (!file) return;
 
     const reader = new FileReader();
+    preview.onload = function(){
+
+    measureCanvas.width =
+        preview.naturalWidth;
+
+    measureCanvas.height =
+        preview.naturalHeight;
+
+    measureCtx.drawImage(
+        preview,
+        0,
+        0
+    );
+
+};
 
     reader.onload = function (e) {
 
@@ -163,6 +192,8 @@ imageInput.addEventListener("change", function () {
 
     };
 
+
+    
     reader.readAsDataURL(file);
 
 });
@@ -325,4 +356,93 @@ function detectOwner(canvas){
 
     return "白";
 }
+measureCanvas.addEventListener("mousedown",function(e){
 
+    const rect =
+        measureCanvas.getBoundingClientRect();
+
+    startX =
+        Math.round((e.clientX-rect.left) *
+        measureCanvas.width/rect.width);
+
+    startY =
+        Math.round((e.clientY-rect.top) *
+        measureCanvas.height/rect.height);
+
+    dragging = true;
+
+});
+measureCanvas.addEventListener("mousemove",function(e){
+
+    if(!dragging)return;
+
+    const rect =
+        measureCanvas.getBoundingClientRect();
+
+    const nowX =
+        Math.round((e.clientX-rect.left) *
+        measureCanvas.width/rect.width);
+
+    const nowY =
+        Math.round((e.clientY-rect.top) *
+        measureCanvas.height/rect.height);
+
+    measureCtx.clearRect(
+        0,
+        0,
+        measureCanvas.width,
+        measureCanvas.height
+    );
+
+    measureCtx.drawImage(
+        preview,
+        0,
+        0
+    );
+
+    measureCtx.strokeStyle="red";
+
+    measureCtx.lineWidth=3;
+
+    measureCtx.strokeRect(
+        startX,
+        startY,
+        nowX-startX,
+        nowY-startY
+    );
+
+});
+
+measureCanvas.addEventListener("mouseup",function(e){
+
+    dragging=false;
+
+    const rect =
+        measureCanvas.getBoundingClientRect();
+
+    const endX =
+        Math.round((e.clientX-rect.left) *
+        measureCanvas.width/rect.width);
+
+    const endY =
+        Math.round((e.clientY-rect.top) *
+        measureCanvas.height/rect.height);
+
+    const x =
+        Math.min(startX,endX);
+
+    const y =
+        Math.min(startY,endY);
+
+    const width =
+        Math.abs(endX-startX);
+
+    const height =
+        Math.abs(endY-startY);
+
+    measureInfo.textContent=
+`x:${x}
+y:${y}
+width:${width}
+height:${height}`;
+});
