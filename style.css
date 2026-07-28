@@ -194,6 +194,8 @@ h1{
 
     max-width:1000px;
 
+    min-height:300px;
+
     border:2px solid #666;
 
     cursor:crosshair;
