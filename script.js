@@ -72,10 +72,10 @@ const areas = [
     point: 10,
     unlockTime: 420,
     maxPoint: null,
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
+    x:485,
+    y:338, 
+    width:72,
+    height:41
   },
   {
     name: "中央_右望楼",
