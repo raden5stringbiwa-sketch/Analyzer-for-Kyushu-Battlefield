@@ -188,3 +188,31 @@ h1{
     max-width:220px;
 
 }
+#measureCanvas{
+
+    width:100%;
+
+    max-width:1000px;
+
+    border:2px solid #666;
+
+    cursor:crosshair;
+
+}
+
+#measureInfo{
+
+    margin-top:15px;
+
+    background:#222;
+
+    color:#7CFC00;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
