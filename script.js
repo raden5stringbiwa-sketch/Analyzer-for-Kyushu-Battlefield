@@ -25,21 +25,22 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
+    x:383,
+    y:271,
+    width:70,
+    height:70
   },
+    
   {
     name: "西_療養所",
     type: "療養所",
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
+    x:376,
+    y:405,
+    width:82,
+    height:67
   },
 
   {
