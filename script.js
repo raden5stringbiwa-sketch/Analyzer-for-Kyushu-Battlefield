@@ -40,7 +40,7 @@ const areas = [
     x:376,
     y:405,
     width:82,
-    height:67
+    height:70
   },
 
   {
@@ -128,10 +128,10 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
+    x:768,
+    y:406,
+    width:70,
+    height:38
   },
   {
     name: "東_療養所",
@@ -139,10 +139,10 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0
+    x:757,
+    y:271,
+    width:89,
+    height:38
   }
 ];
 const cropAreaElement =
