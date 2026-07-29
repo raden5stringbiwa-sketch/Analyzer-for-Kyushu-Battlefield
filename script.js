@@ -236,8 +236,8 @@ if(area.width === 0 || area.height === 0){
     const canvas =
         document.getElementById(area.canvas);
 
-    const owner =
-        detectOwner(canvas);
+  const owner =
+    detectOwner(canvas, area);
 
 area.owner = owner;
     
@@ -283,17 +283,25 @@ function cropArea(image, area){
 
 }
 
-function detectOwner(canvas){
+function detectOwner(canvas, area){
 
     const ctx = canvas.getContext("2d");
 
-    const imageData =
-        ctx.getImageData(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+let targetHeight;
+
+if (area.type === "城" || area.type === "拠点") {
+    targetHeight = Math.floor(canvas.height / 3);
+} else {
+    targetHeight = Math.floor(canvas.height / 2);
+}
+
+const imageData =
+    ctx.getImageData(
+        0,
+        0,
+        canvas.width,
+        targetHeight
+    );
 
     let blue = 0;
     let red = 0;
