@@ -4,6 +4,16 @@ const imageInput =
 const preview =
     document.getElementById("preview");
 
+const scoreImageInput =
+    document.getElementById("scoreImageInput");
+
+const scorePreview =
+    document.getElementById("scorePreview");
+
+let blueScore = 0;
+let redScore = 0;
+let remainingTime = "";
+
 const measureCanvas =
     document.getElementById("measureCanvas");
 
@@ -197,6 +207,26 @@ imageInput.addEventListener("change", function () {
     reader.readAsDataURL(file);
 
 });
+scoreImageInput.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+
+        scorePreview.src = e.target.result;
+        scorePreview.style.display = "block";
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
 const analyzeButton =
     document.getElementById("analyzeButton");
 
