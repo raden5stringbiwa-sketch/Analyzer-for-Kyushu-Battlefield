@@ -233,6 +233,9 @@ const analyzeButton =
 const result =
     document.getElementById("result");
 
+const scoreResult =
+    document.getElementById("scoreResult");
+
 analyzeButton.addEventListener("click", async function () {
 
     if (!preview.src) {
