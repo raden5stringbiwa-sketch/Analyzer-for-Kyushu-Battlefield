@@ -382,10 +382,17 @@ const imageData =
         }
 
 
-        // 青同盟
-        if(b > r * 1.2 && b > g * 1.05){
-            blue++;
-        }
+// 青同盟
+const brightness = r + g + b;
+
+if(
+    brightness > 150 &&
+    b > r * 1.15 &&
+    b > g * 1.05 &&
+    b - r > 20
+){
+    blue++;
+}
 
 
         // 赤同盟
