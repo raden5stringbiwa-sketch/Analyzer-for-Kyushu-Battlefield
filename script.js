@@ -280,7 +280,30 @@ function cropArea(image, area){
         area.height
 
     );
+// 解析範囲を赤枠表示
+ctx.strokeStyle = "red";
+ctx.lineWidth = 2;
 
+let targetHeight;
+let startX;
+let targetWidth;
+
+if (area.type === "城" || area.type === "拠点") {
+    targetHeight = Math.floor(canvas.height / 3);
+    startX = Math.floor(canvas.width * 0.2);
+    targetWidth = Math.floor(canvas.width * 0.6);
+} else {
+    targetHeight = Math.floor(canvas.height / 2);
+    startX = Math.floor(canvas.width * 0.15);
+    targetWidth = Math.floor(canvas.width * 0.7);
+}
+
+ctx.strokeRect(
+    startX,
+    0,
+    targetWidth,
+    targetHeight
+);
 }
 
 function detectOwner(canvas, area){
