@@ -314,7 +314,8 @@ function cropArea(image, area){
 
     );
 // 解析範囲を赤枠表示
-ctx.strokeStyle = "red";
+/*
+    ctx.strokeStyle = "red";
 ctx.lineWidth = 2;
 
 let targetHeight;
@@ -337,6 +338,7 @@ ctx.strokeRect(
     targetWidth,
     targetHeight
 );
+*/
 }
 
 function detectOwner(canvas, area){
