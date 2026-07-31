@@ -495,6 +495,8 @@ if(unlocked){
 }
 
 output += "\n----------------\n";
+output += "青 : " + bluePerSec + "点/秒\n";
+output += "赤 : " + redPerSec + "点/秒\n";
 output += "差 : " + (bluePerSec - redPerSec) + "点/秒\n";
 
 output += "\n現在ポイント\n";
@@ -503,9 +505,6 @@ output += "赤 : " + redScore.toLocaleString() + "\n";
 output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";
 
 result.textContent = output;
-
-result.textContent = output;
-
 
 
 });
