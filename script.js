@@ -10,6 +10,9 @@ const scoreImageInput =
 const scorePreview =
     document.getElementById("scorePreview");
 
+const timeResult =
+    document.getElementById("timeResult");
+
 let blueScore = 0;
 let redScore = 0;
 let remainingTime = "";
