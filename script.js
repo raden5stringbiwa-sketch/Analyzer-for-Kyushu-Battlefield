@@ -20,7 +20,7 @@ const measureCanvas =
 const scoreArea = {
     x: 560,
     y: 69,
-    width: 96,
+    width: 93,
     height: 25
 };
 
