@@ -222,3 +222,11 @@ h1{
     padding: 12px 40px;
     font-weight: bold;
 }
+
+/*測量機能を隠す*/
+
+#measureCanvas,
+#measureInfo {
+    display:none;
+}
+
