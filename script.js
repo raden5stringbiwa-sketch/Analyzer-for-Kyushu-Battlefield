@@ -247,7 +247,10 @@ scorePreview.onload = function(){
     cropScoreTime();
     cropBlueScore();
     cropRedScore();
-    readScore();
+
+    setTimeout(() => {
+        readScore();
+    }, 100);
 };
 };
 
