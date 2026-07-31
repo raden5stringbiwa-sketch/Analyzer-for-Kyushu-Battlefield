@@ -10,7 +10,7 @@ const scoreImageInput =
 const scorePreview =
     document.getElementById("scorePreview");
 
-let blue = 0;
+let blueScore = 0;
 let redScore = 0;
 let remainingTime = "";
 
@@ -260,9 +260,11 @@ function cropScoreTime(){
 
     scoreTimeCanvas = canvas;
 
-    document.body.appendChild(canvas);
-    
+document.body.appendChild(canvas);
+
+setTimeout(() => {
     readTime();
+}, 100);
 }
 async function readTime(){
 
