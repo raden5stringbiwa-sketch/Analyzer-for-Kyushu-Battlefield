@@ -243,9 +243,10 @@ reader.onload = function(e){
         scorePreview.src = e.target.result;
         scorePreview.style.display = "block";
 
-        scorePreview.onload = function(){
-            cropScoreTime();
-            cropBlueScore();
+scorePreview.onload = function(){
+    cropScoreTime();
+    cropBlueScore();
+    cropRedScore();
 };
         };
 
@@ -313,6 +314,35 @@ function cropBlueScore(){
     document.body.appendChild(canvas);
 
 }
+let redScoreCanvas;
+
+function cropRedScore(){
+
+    const canvas = document.createElement("canvas");
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = redScoreArea.width;
+    canvas.height = redScoreArea.height;
+
+    ctx.drawImage(
+        scorePreview,
+        redScoreArea.x,
+        redScoreArea.y,
+        redScoreArea.width,
+        redScoreArea.height,
+        0,
+        0,
+        redScoreArea.width,
+        redScoreArea.height
+    );
+
+    redScoreCanvas = canvas;
+
+    document.body.appendChild(canvas);
+
+}
+
 
 async function readTime(){
 
