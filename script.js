@@ -506,7 +506,17 @@ const blueFinal =
 
 const redFinal =
     redScore + redPerSec * remainingSeconds;
+output += "\n勝敗予測\n";
 
+if(blueFinal > redFinal){
+    output += "青勝利予測\n";
+}
+else if(redFinal > blueFinal){
+    output += "赤勝利予測\n";
+}
+else{
+    output += "引き分け予測\n";
+}
 
 output += "\n終了時予測\n";
 output += "青 : " + Math.floor(blueFinal).toLocaleString() + "\n";
