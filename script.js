@@ -281,6 +281,9 @@ async function readTime(){
 
     remainingTime = text.trim();
 
+timeResult.textContent =
+    "残り時間：" + remainingTime;
+
 }
 const analyzeButton =
     document.getElementById("analyzeButton");
