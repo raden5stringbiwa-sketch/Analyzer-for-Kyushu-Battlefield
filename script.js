@@ -16,6 +16,7 @@ const timeResult =
 let blueScore = 0;
 let redScore = 0;
 let remainingTime = "";
+let remainingSeconds = 0;
 
 const measureCanvas =
     document.getElementById("measureCanvas");
@@ -279,10 +280,14 @@ async function readTime(){
 
     console.log(text);
 
-    remainingTime = text.trim();
+ remainingTime = text.trim();
+
+remainingSeconds =
+    timeToSeconds(remainingTime);
 
 timeResult.textContent =
-    "残り時間：" + remainingTime;
+    "残り時間：" + remainingTime +
+    "（" + remainingSeconds + "秒）";
 
 }
 function timeToSeconds(time){
