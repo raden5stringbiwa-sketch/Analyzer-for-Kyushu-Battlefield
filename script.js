@@ -501,11 +501,13 @@ output += "青 : " + blueScore.toLocaleString() + "\n";
 output += "赤 : " + redScore.toLocaleString() + "\n";
 output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";
 
+const finalSeconds = remainingSeconds + 1;
+
 const blueFinal =
-    blueScore + bluePerSec * remainingSeconds;
+    blueScore + bluePerSec * finalSeconds;
 
 const redFinal =
-    redScore + redPerSec * remainingSeconds;
+    redScore + redPerSec * finalSeconds;
 output += "\n勝敗予測\n";
 
 if(blueFinal > redFinal){
