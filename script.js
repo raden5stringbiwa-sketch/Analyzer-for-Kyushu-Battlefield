@@ -27,6 +27,18 @@ const scoreArea = {
     width: 93,
     height: 25
 };
+const blueScoreArea = {
+    x: 532,
+    y: 22,
+    width: 89,
+    height: 26
+};
+const redScoreArea = {
+    x: 740,
+    y: 22,
+    width: 89,
+    height: 26
+};
 
 const measureInfo =
     document.getElementById("measureInfo");
