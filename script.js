@@ -10,7 +10,7 @@ const scoreImageInput =
 const scorePreview =
     document.getElementById("scorePreview");
 
-let blueScore = 0;
+let blue = 0;
 let redScore = 0;
 let remainingTime = "";
 
@@ -235,6 +235,8 @@ reader.onload = function(e){
 
     reader.readAsDataURL(file);
 });
+let scoreTimeCanvas;
+
 function cropScoreTime(){
 
     const canvas = document.createElement("canvas");
@@ -256,10 +258,25 @@ function cropScoreTime(){
         scoreArea.height
     );
 
+    scoreTimeCanvas = canvas;
+
     document.body.appendChild(canvas);
+    
+    readTime();
+}
+async function readTime(){
+
+    const { data:{ text } } =
+        await Tesseract.recognize(
+            scoreTimeCanvas,
+            "eng"
+        );
+
+    console.log(text);
+
+    remainingTime = text.trim();
 
 }
-
 const analyzeButton =
     document.getElementById("analyzeButton");
 
