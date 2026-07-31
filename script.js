@@ -235,7 +235,30 @@ reader.onload = function(e){
 
     reader.readAsDataURL(file);
 });
+function cropScoreTime(){
 
+    const canvas = document.createElement("canvas");
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = scoreArea.width;
+    canvas.height = scoreArea.height;
+
+    ctx.drawImage(
+        scorePreview,
+        scoreArea.x,
+        scoreArea.y,
+        scoreArea.width,
+        scoreArea.height,
+        0,
+        0,
+        scoreArea.width,
+        scoreArea.height
+    );
+
+    document.body.appendChild(canvas);
+
+}
 
 const analyzeButton =
     document.getElementById("analyzeButton");
