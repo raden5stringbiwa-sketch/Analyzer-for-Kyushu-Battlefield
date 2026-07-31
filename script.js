@@ -257,27 +257,43 @@ const img = preview;
 // OCR（まだ仮）
 let output = "解析結果\n";
 
+let bluePerSec = 0;
+let redPerSec = 0;
+
 for (const area of areas){
 
-if(area.width === 0 || area.height === 0){
-    output += area.name + " : 座標未設定\n";
-    continue;
-}
+    if(area.width === 0 || area.height === 0){
+        output += area.name + " : 座標未設定\n";
+        continue;
+    }
 
     cropArea(img, area);
 
     const canvas =
         document.getElementById(area.canvas);
 
-  const owner =
-    detectOwner(canvas, area);
+    const owner =
+        detectOwner(canvas, area);
 
-area.owner = owner;
-    
+    area.owner = owner;
+
+    if(owner === "青"){
+        bluePerSec += area.point;
+    }
+
+    if(owner === "赤"){
+        redPerSec += area.point;
+    }
+
     output +=
         area.name + " : " + owner + "\n";
 
 }
+
+output += "\n----------------\n";
+output += "青 : " + bluePerSec + "点/秒\n";
+output += "赤 : " + redPerSec + "点/秒\n";
+output += "差 : " + (bluePerSec - redPerSec) + "点/秒\n";
 
 result.textContent = output;
 
