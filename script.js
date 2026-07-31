@@ -248,7 +248,10 @@ analyzeButton.addEventListener("click", async function () {
 
     result.textContent =
         "解析中・・・";
-
+const elapsedTime =
+    parseInt(
+        document.getElementById("elapsedTime").value
+    ) || 0;
 // 元画像
 const img = preview;
 
@@ -277,6 +280,11 @@ for (const area of areas){
 
     area.owner = owner;
 
+    const unlocked =
+    elapsedTime >= area.unlockTime;
+
+if(unlocked){
+
     if(owner === "青"){
         bluePerSec += area.point;
     }
@@ -284,6 +292,8 @@ for (const area of areas){
     if(owner === "赤"){
         redPerSec += area.point;
     }
+
+}
 
     output +=
         area.name + " : " + owner + "\n";
