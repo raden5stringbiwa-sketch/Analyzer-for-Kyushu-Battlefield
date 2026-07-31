@@ -245,6 +245,8 @@ reader.onload = function(e){
 
         scorePreview.onload = function(){
             cropScoreTime();
+            cropBlueScore();
+};
         };
 
     };
@@ -282,6 +284,36 @@ setTimeout(() => {
     readTime();
 }, 100);
 }
+
+let blueScoreCanvas;
+
+function cropBlueScore(){
+
+    const canvas = document.createElement("canvas");
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = blueScoreArea.width;
+    canvas.height = blueScoreArea.height;
+
+    ctx.drawImage(
+        scorePreview,
+        blueScoreArea.x,
+        blueScoreArea.y,
+        blueScoreArea.width,
+        blueScoreArea.height,
+        0,
+        0,
+        blueScoreArea.width,
+        blueScoreArea.height
+    );
+
+    blueScoreCanvas = canvas;
+
+    document.body.appendChild(canvas);
+
+}
+
 async function readTime(){
 
     const { data:{ text } } =
