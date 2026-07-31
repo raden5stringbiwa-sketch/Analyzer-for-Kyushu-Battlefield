@@ -442,7 +442,10 @@ analyzeButton.addEventListener("click", async function () {
 
     result.textContent =
         "解析中・・・";
-const elapsedTime = 3600 - remainingSeconds;
+const totalGameTime = 3600;
+
+const elapsedTime =
+    totalGameTime - remainingSeconds;
 // 元画像
 const img = preview;
 
