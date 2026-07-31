@@ -346,18 +346,24 @@ function detectOwner(canvas, area){
     const ctx = canvas.getContext("2d");
 
 let targetHeight;
+let startX;
+let targetWidth;
 
 if (area.type === "城" || area.type === "拠点") {
     targetHeight = Math.floor(canvas.height / 3);
+    startX = Math.floor(canvas.width * 0.2);
+    targetWidth = Math.floor(canvas.width * 0.6);
 } else {
     targetHeight = Math.floor(canvas.height / 2);
+    startX = Math.floor(canvas.width * 0.15);
+    targetWidth = Math.floor(canvas.width * 0.7);
 }
 
 const imageData =
     ctx.getImageData(
+        startX,
         0,
-        0,
-        canvas.width,
+        targetWidth,
         targetHeight
     );
 
