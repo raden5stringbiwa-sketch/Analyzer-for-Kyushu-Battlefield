@@ -364,6 +364,41 @@ timeResult.textContent =
     "（" + remainingSeconds + "秒）";
 
 }
+async function readScore(){
+
+    const blueResult =
+        await Tesseract.recognize(
+            blueScoreCanvas,
+            "eng"
+        );
+
+    const redResult =
+        await Tesseract.recognize(
+            redScoreCanvas,
+            "eng"
+        );
+
+
+    blueScore =
+        Number(
+            blueResult.data.text.replace(/\D/g,"")
+        ) || 0;
+
+
+    redScore =
+        Number(
+            redResult.data.text.replace(/\D/g,"")
+        ) || 0;
+
+
+    console.log({
+        blueScore,
+        redScore
+    });
+
+}
+
+
 function timeToSeconds(time){
 
     // 全角コロンを半角に変換
