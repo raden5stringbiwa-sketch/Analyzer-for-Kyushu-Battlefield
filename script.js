@@ -397,7 +397,9 @@ async function readScore(){
         blueScore,
         redScore
     });
-
+    scoreResult.textContent =
+        "青スコア：" + blueScore.toLocaleString() +
+        "\n赤スコア：" + redScore.toLocaleString();
 }
 
 
