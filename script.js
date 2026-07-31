@@ -285,6 +285,24 @@ timeResult.textContent =
     "残り時間：" + remainingTime;
 
 }
+function timeToSeconds(time){
+
+    // 全角コロンを半角に変換
+    time = time.replace("：", ":");
+
+    const parts = time.split(":");
+
+    if(parts.length !== 3){
+        return 0;
+    }
+
+    const hour = parseInt(parts[0]) || 0;
+    const min = parseInt(parts[1]) || 0;
+    const sec = parseInt(parts[2]) || 0;
+
+    return hour * 3600 + min * 60 + sec;
+
+}
 const analyzeButton =
     document.getElementById("analyzeButton");
 
