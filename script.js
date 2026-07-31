@@ -17,6 +17,13 @@ let remainingTime = "";
 const measureCanvas =
     document.getElementById("measureCanvas");
 
+const scoreArea = {
+    x: 560,
+    y: 69,
+    width: 96,
+    height: 25
+};
+
 const measureInfo =
     document.getElementById("measureInfo");
 
@@ -215,15 +222,18 @@ scoreImageInput.addEventListener("change", function(){
 
     const reader = new FileReader();
 
-    reader.onload = function(e){
+reader.onload = function(e){
 
         scorePreview.src = e.target.result;
         scorePreview.style.display = "block";
 
+        scorePreview.onload = function(){
+            cropScoreTime();
+        };
+
     };
 
     reader.readAsDataURL(file);
-
 });
 
 
