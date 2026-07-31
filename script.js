@@ -504,6 +504,17 @@ output += "青 : " + blueScore.toLocaleString() + "\n";
 output += "赤 : " + redScore.toLocaleString() + "\n";
 output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";
 
+const blueFinal =
+    blueScore + bluePerSec * remainingSeconds;
+
+const redFinal =
+    redScore + redPerSec * remainingSeconds;
+
+
+output += "\n終了時予測\n";
+output += "青 : " + Math.floor(blueFinal).toLocaleString() + "\n";
+output += "赤 : " + Math.floor(redFinal).toLocaleString() + "\n";
+    
 result.textContent = output;
 
 
