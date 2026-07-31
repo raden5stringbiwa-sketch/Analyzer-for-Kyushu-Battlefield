@@ -217,4 +217,8 @@ h1{
     font-size:16px;
 
 }
-
+#analyzeButton {
+    font-size: 24px;
+    padding: 12px 40px;
+    font-weight: bold;
+}
