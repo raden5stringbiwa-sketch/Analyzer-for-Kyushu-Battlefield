@@ -513,6 +513,30 @@ const redFinal =
     redScore + redPerSec * finalSeconds;
 output += "\n勝敗予測\n";
 
+// 逆転に必要な毎秒ポイント
+const currentDiff = blueScore - redScore;
+const rateDiff = bluePerSec - redPerSec;
+
+output += "\n逆転条件\n";
+
+if (currentDiff > 0) {
+    // 青が勝っている → 赤が必要
+    const need =
+        Math.ceil((currentDiff + 1) / finalSeconds);
+
+    output += "赤が逆転するには +" + need + "点/秒必要\n";
+}
+else if (currentDiff < 0) {
+    // 赤が勝っている → 青が必要
+    const need =
+        Math.ceil((-currentDiff + 1) / finalSeconds);
+
+    output += "青が逆転するには +" + need + "点/秒必要\n";
+}
+else {
+    output += "現在同点\n";
+}
+    
 if(blueFinal > redFinal){
     output += "青勝利予測\n";
 }
