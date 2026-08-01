@@ -183,29 +183,29 @@ const remainAreas = [
     {
         name:"北1城",
         x:564,
-        y:93,
-        width:45,
+        y:95,
+        width:46,
         height:16
     },
     {
         name:"北2城",
         x:564,
-        y:228,
-        width:45,
+        y:230,
+        width:46,
         height:16
     },
     {
         name:"南3城",
         x:564,
-        y:497,
-        width:45,
+        y:499,
+        width:46,
         height:16
     },
     {
         name:"南4城",
         x:564,
-        y:631,
-        width:45,
+        y:633,
+        width:46,
         height:16
     }
 ];
@@ -311,7 +311,35 @@ function cropScoreTime(){
         scoreArea.width,
         scoreArea.height
     );
+const imageData = ctx.getImageData(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+);
 
+const data = imageData.data;
+
+for(let i = 0; i < data.length; i += 4){
+
+    const r = data[i];
+    const g = data[i+1];
+    const b = data[i+2];
+
+    // 白文字だけ残す
+    if(r > 180 && g > 180 && b > 180){
+        data[i] = 255;
+        data[i+1] = 255;
+        data[i+2] = 255;
+    }
+    else{
+        data[i] = 0;
+        data[i+1] = 0;
+        data[i+2] = 0;
+    }
+}
+
+ctx.putImageData(imageData,0,0);
     scoreTimeCanvas = canvas;
 
 document.body.appendChild(canvas);
