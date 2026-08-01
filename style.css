@@ -225,11 +225,11 @@ h1{
 
 /*測量機能を隠す*/
 
-#measureCanvas,
+/*#measureCanvas,
 #measureInfo {
     display:none;
 }
-
+*/
 #result {
     font-size: 16px;
     line-height: 1.35;
