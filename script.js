@@ -178,6 +178,43 @@ const areas = [
     height:38
   }
 ];
+const areas = [
+  // 今の施設一覧
+];
+
+
+// ★ここから追加
+const remainAreas = [
+    {
+        name:"北1城",
+        x:564,
+        y:93,
+        width:45,
+        height:16
+    },
+    {
+        name:"北2城",
+        x:564,
+        y:228,
+        width:45,
+        height:16
+    },
+    {
+        name:"南3城",
+        x:564,
+        y:496,
+        width:45,
+        height:16
+    },
+    {
+        name:"南4城",
+        x:564,
+        y:630,
+        width:45,
+        height:16
+    }
+];
+
 const cropAreaElement =
     document.getElementById("cropArea");
 
