@@ -216,9 +216,6 @@ const cropAreaElement =
 
 
 
-    ctx.putImageData(img, 0, 0);
-}
-
 
 areas.forEach((area, index) => {
 
