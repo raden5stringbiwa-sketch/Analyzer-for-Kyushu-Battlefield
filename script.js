@@ -523,6 +523,8 @@ for (const area of remainAreas) {
         area.width,
         area.height
     );
+    // ★★★ この一行だけ挟む ★★★
+makeBackgroundBlack(canvas);
 
     document.body.appendChild(canvas);
 
