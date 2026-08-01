@@ -557,7 +557,7 @@ for (const area of remainAreas) {
         area.height
     );
     // ★★★ この一行だけ挟む ★★★
-makeBackgroundBlack(canvas);
+　　　/*makeBackgroundBlack(canvas);*/
 
     document.body.appendChild(canvas);
 
