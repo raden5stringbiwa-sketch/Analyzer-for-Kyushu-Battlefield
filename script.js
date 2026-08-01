@@ -209,6 +209,7 @@ const remainAreas = [
         height:16
     }
 ];
+let remainPointResults = [];
 
 const cropAreaElement =
     document.getElementById("cropArea");
@@ -475,7 +476,7 @@ analyzeButton.addEventListener("click", async function () {
     result.textContent =
         "解析中・・・";
 
-remainAreas.forEach(area => {
+for (const area of remainAreas) {
 
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -497,7 +498,23 @@ remainAreas.forEach(area => {
 
     document.body.appendChild(canvas);
 
-});
+
+    const result =
+        await Tesseract.recognize(
+            canvas,
+            "eng",
+            {
+                tessedit_char_whitelist: "0123456789"
+            }
+        );
+
+
+    console.log(
+        area.name,
+        result.data.text
+    );
+
+}
     
 const totalGameTime = 3600;
 
