@@ -563,14 +563,42 @@ for (const area of remainAreas) {
     document.body.appendChild(canvas);
 
 
-    const result =
-        await Tesseract.recognize(
-            canvas,
-            "eng",
-            {
-                tessedit_char_whitelist: "0123456789"
-            }
-        );
+   document.body.appendChild(canvas);
+
+
+// ★4倍拡大
+const scale = 4;
+
+const bigCanvas = document.createElement("canvas");
+
+bigCanvas.width = canvas.width * scale;
+bigCanvas.height = canvas.height * scale;
+
+const bigCtx = bigCanvas.getContext("2d");
+
+bigCtx.imageSmoothingEnabled = false;
+
+bigCtx.drawImage(
+    canvas,
+    0,
+    0,
+    bigCanvas.width,
+    bigCanvas.height
+);
+
+document.body.appendChild(bigCanvas);
+
+
+// 拡大画像をOCR
+const result =
+    await Tesseract.recognize(
+        bigCanvas,
+        "eng",
+        {
+            tessedit_char_whitelist: "0123456789",
+            tessedit_pageseg_mode: "7"
+        }
+    );
 
 
     console.log(
