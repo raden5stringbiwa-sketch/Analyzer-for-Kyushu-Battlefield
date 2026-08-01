@@ -479,6 +479,31 @@ analyzeButton.addEventListener("click", async function () {
 
     result.textContent =
         "解析中・・・";
+
+remainAreas.forEach(area => {
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = area.width;
+    canvas.height = area.height;
+
+    ctx.drawImage(
+        preview,
+        area.x,
+        area.y,
+        area.width,
+        area.height,
+        0,
+        0,
+        area.width,
+        area.height
+    );
+
+    document.body.appendChild(canvas);
+
+});
+    
 const totalGameTime = 3600;
 
 const elapsedTime =
