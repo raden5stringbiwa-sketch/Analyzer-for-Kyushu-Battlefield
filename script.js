@@ -506,11 +506,35 @@ output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";
 
 const finalSeconds = remainingSeconds + 1;
 
-const blueFinal =
-    blueScore + bluePerSec * finalSeconds;
+let blueAdd = 0;
+let redAdd = 0;
 
-const redFinal =
-    redScore + redPerSec * finalSeconds;
+for (const area of areas) {
+
+    if (area.owner === "白") continue;
+
+    let addPoint = area.point * finalSeconds;
+
+    // 上限あり施設（城・中央拠点）
+    if (area.maxPoint !== null && area.remainingPoint !== undefined) {
+
+        addPoint = Math.min(
+            addPoint,
+            area.remainingPoint
+        );
+    }
+
+    if (area.owner === "青") {
+        blueAdd += addPoint;
+    }
+
+    if (area.owner === "赤") {
+        redAdd += addPoint;
+    }
+}
+
+const blueFinal = blueScore + blueAdd;
+const redFinal = redScore + redAdd;
 output += "\n勝敗予測\n";
 
 // 逆転に必要な毎秒ポイント
