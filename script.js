@@ -214,6 +214,7 @@ let remainPointResults = [];
 const cropAreaElement =
     document.getElementById("cropArea");
 
+/*コパイロットが書いてきたゴミロジック*/
 function makeBackgroundBlack(canvas) {
     const ctx = canvas.getContext("2d");
     const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
