@@ -563,9 +563,7 @@ for (const area of remainAreas) {
     document.body.appendChild(canvas);
 
 
-   document.body.appendChild(canvas);
-
-
+ 
 // ★4倍拡大
 const scale = 4;
 
@@ -594,10 +592,11 @@ const result =
     await Tesseract.recognize(
         bigCanvas,
         "eng",
-        {
-            tessedit_char_whitelist: "0123456789",
-            tessedit_pageseg_mode: "7"
-        }
+{
+    tessedit_char_whitelist: "0123456789",
+    tessedit_pageseg_mode: "7",
+    preserve_interword_spaces: "0"
+}
     );
 
 
