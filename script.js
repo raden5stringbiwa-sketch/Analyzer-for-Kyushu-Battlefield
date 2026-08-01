@@ -214,36 +214,7 @@ let remainPointResults = [];
 const cropAreaElement =
     document.getElementById("cropArea");
 
-/*コパイロットが書いてきたゴミロジック*/
-function makeBackgroundBlack(canvas) {
-    const ctx = canvas.getContext("2d");
-    const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = img.data;
 
-    for (let i = 0; i < data.length; i += 4) {
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
-
-        // 黄色文字っぽいところだけ白にする
-        const isYellow =
-            r > 180 &&
-            g > 150 &&
-            b < 130 &&
-            (r - b) > 60;
-
-        if (isYellow) {
-            // 文字部分 → 白
-            data[i] = 255;
-            data[i + 1] = 255;
-            data[i + 2] = 255;
-        } else {
-            // 背景 → 黒
-            data[i] = 0;
-            data[i + 1] = 0;
-            data[i + 2] = 0;
-        }
-    }
 
     ctx.putImageData(img, 0, 0);
 }
@@ -557,9 +528,7 @@ for (const area of remainAreas) {
         area.width,
         area.height
     );
-    // ★★★ この一行だけ挟む ★★★
-　　　/*makeBackgroundBlack(canvas);*/
-
+  
     document.body.appendChild(canvas);
 
 
