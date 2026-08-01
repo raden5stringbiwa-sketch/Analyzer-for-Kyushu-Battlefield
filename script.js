@@ -178,11 +178,6 @@ const areas = [
     height:38
   }
 ];
-const areas = [
-  // 今の施設一覧
-];
-
-
 // ★ここから追加
 const remainAreas = [
     {
