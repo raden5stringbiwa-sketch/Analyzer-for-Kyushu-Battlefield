@@ -291,15 +291,17 @@ body {
 #judgeWindow {
     position: fixed;
     left: 10px;
-    top: 100px;
-    width: 200px;
+    top: 120px;
+    width: 180px;
+    z-index: 1000;
 }
 
 #reportWindow {
     position: fixed;
     right: 10px;
-    top: 100px;
-    width: 350px;
+    top: 120px;
+    width: 300px;
+    z-index: 1000;
 }
 
 
