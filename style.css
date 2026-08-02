@@ -238,3 +238,29 @@ h1{
     overflow-y: auto;
     white-space: pre-wrap;
 }
+/* 判定と軍師報告の2カラム */
+.result-panel {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.result-box {
+    flex: 1;
+    background: #1f1f1f;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.result-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.result-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 15px;
+    line-height: 1.5;
+}
