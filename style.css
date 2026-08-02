@@ -256,9 +256,10 @@ body {
     overflow-y: auto;
     z-index: 1000;
 }
+
 .container {
-    width: 900px;
-    margin: 20px auto;
+    width: auto;
+    margin-left: 220px;
+    margin-right: 340px;
+    margin-top: 20px;
 }
-
-
