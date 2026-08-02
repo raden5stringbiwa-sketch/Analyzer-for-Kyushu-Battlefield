@@ -275,6 +275,8 @@ body {
     right: 10px;
     top: 120px;
     width: 300px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
     z-index: 1000;
 }
 .container {
