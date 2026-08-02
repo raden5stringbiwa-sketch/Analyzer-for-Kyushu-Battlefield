@@ -709,7 +709,38 @@ output += "\n終了時予測\n";
 output += "青 : " + Math.floor(blueFinal).toLocaleString() + "\n";
 output += "赤 : " + Math.floor(redFinal).toLocaleString() + "\n";
     
-result.textContent = output;
+// 左側（判定）
+judgeResult.textContent = output;
+
+// 右側（軍師報告）
+let report = "";
+
+report += (blueFinal > redFinal)
+    ? "青勝利予測\n\n"
+    : (redFinal > blueFinal)
+    ? "赤勝利予測\n\n"
+    : "引き分け予測\n\n";
+
+report += "現在差：" +
+    (blueScore - redScore).toLocaleString() + "\n";
+
+report += "毎秒差：" +
+    (bluePerSec - redPerSec) + "点/秒\n\n";
+
+if (currentDiff > 0) {
+    const need = Math.ceil((currentDiff + 1) / finalSeconds);
+    report += "赤逆転条件：+" + need + "点/秒\n\n";
+}
+else if (currentDiff < 0) {
+    const need = Math.ceil((-currentDiff + 1) / finalSeconds);
+    report += "青逆転条件：+" + need + "点/秒\n\n";
+}
+
+report += "終了時予測\n";
+report += "青：" + Math.floor(blueFinal).toLocaleString() + "\n";
+report += "赤：" + Math.floor(redFinal).toLocaleString();
+
+reportResult.textContent = report;
 
 
 });
