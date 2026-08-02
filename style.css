@@ -298,3 +298,23 @@ body {
     box-sizing: border-box;
 }
 
+#judgeWindow {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    width: 220px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+#reportWindow {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 380px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+
+
