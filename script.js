@@ -623,11 +623,18 @@ if(unlocked){
 
 }
 
-    output +=
-        area.name + " : " + owner + "\n";
+let mark = "⚪";
 
+if(owner === "青"){
+    mark = "🔵";
+}
+else if(owner === "赤"){
+    mark = "🔴";
 }
 
+output +=
+    mark + " " + area.name.replace("_"," ") + "\n";
+}
 output += "\n----------------\n";
 output += "青 : " + bluePerSec + "点/秒\n";
 output += "赤 : " + redPerSec + "点/秒\n";
