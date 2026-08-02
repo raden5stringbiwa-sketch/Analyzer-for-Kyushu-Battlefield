@@ -487,8 +487,11 @@ function timeToSeconds(time){
 const analyzeButton =
     document.getElementById("analyzeButton");
 
-const result =
-    document.getElementById("result");
+const judgeResult =
+    document.getElementById("judgeResult");
+
+const reportResult =
+    document.getElementById("reportResult");
 
 const scoreResult =
     document.getElementById("scoreResult");
@@ -503,8 +506,8 @@ analyzeButton.addEventListener("click", async function () {
 
     }
 
-    result.textContent =
-        "解析中・・・";
+   judgeResult.textContent = "解析中・・・";
+   reportResult.textContent = "解析中・・・";
 
 for (const area of remainAreas) {
 
