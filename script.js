@@ -11,7 +11,7 @@ const scorePreview =
     document.getElementById("scorePreview");
 
 const timeResult =
-    document.getElementById("elapsedTime");
+    document.getElementById("timeResult");
 
 let blueScore = 0;
 let redScore = 0;
@@ -185,28 +185,28 @@ const remainAreas = [
         name:"北1城",
         x:699,
         y:117,
-        width:130,
+        width:61,
         height:22
     },
     {
         name:"北2城",
         x:699,
         y:285,
-        width:130,
+        width:61,
         height:22
     },
     {
         name:"南3城",
         x:699,
         y:622,
-        width:130,
+        width:61,
         height:22
     },
     {
         name:"南4城",
         x:699,
         y:790,
-        width:130,
+        width:61,
         height:22
     }
 ];
@@ -303,38 +303,17 @@ function cropScoreTime(){
     canvas.width = scoreArea.width;
     canvas.height = scoreArea.height;
 
-ctx.drawImage(
-    scorePreview,
-    scoreArea.x,
-    scoreArea.y,
-    scoreArea.width,
-    scoreArea.height,
-    0,
-    0,
-    scoreArea.width,
-    scoreArea.height
-);
-// ★白文字だけ残す
-const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-const data = imageData.data;
-
-for (let i = 0; i < data.length; i += 4) {
-    const r = data[i];
-    const g = data[i + 1];
-    const b = data[i + 2];
-
-    if (r > 200 && g > 200 && b > 200) {
-        data[i] = 255;
-        data[i + 1] = 255;
-        data[i + 2] = 255;
-    } else {
-        data[i] = 0;
-        data[i + 1] = 0;
-        data[i + 2] = 0;
-    }
-}
-
-ctx.putImageData(imageData, 0, 0);
+    ctx.drawImage(
+        scorePreview,
+        scoreArea.x,
+        scoreArea.y,
+        scoreArea.width,
+        scoreArea.height,
+        0,
+        0,
+        scoreArea.width,
+        scoreArea.height
+    );
 /*const imageData = ctx.getImageData(
     0,
     0,
@@ -366,7 +345,7 @@ for(let i = 0; i < data.length; i += 4){
 // ctx.putImageData(imageData,0,0);
 scoreTimeCanvas = canvas;
 
-//document.body.appendChild(canvas);
+document.body.appendChild(canvas);
 
 setTimeout(() => {
     readTime();
@@ -398,7 +377,7 @@ function cropBlueScore(){
 
     blueScoreCanvas = canvas;
 
-   //document.body.appendChild(canvas);
+    document.body.appendChild(canvas);
 
 }
 let redScoreCanvas;
@@ -426,7 +405,7 @@ function cropRedScore(){
 
     redScoreCanvas = canvas;
 
-    //*document.body.appendChild(canvas);
+    document.body.appendChild(canvas);
 
 }
 
@@ -534,7 +513,7 @@ analyzeButton.addEventListener("click", async function () {
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
-/*for (const area of remainAreas) {
+for (const area of remainAreas) {
 
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
@@ -543,16 +522,16 @@ analyzeButton.addEventListener("click", async function () {
     canvas.height = area.height;
 
     ctx.drawImage(
-    scorePreview,
-    scoreArea.x,
-    scoreArea.y,
-    scoreArea.width,
-    scoreArea.height,
-    0,
-    0,
-    scoreArea.width,
-    scoreArea.height
-);
+        preview,
+        area.x,
+        area.y,
+        area.width,
+        area.height,
+        0,
+        0,
+        area.width,
+        area.height
+    );
   
     document.body.appendChild(canvas);
 
@@ -587,7 +566,7 @@ const result =
         canvas,
         "eng",
 {
-    tessedit_char_whitelist: "0123456789/",
+    tessedit_char_whitelist: "0123456789:",
     tessedit_pageseg_mode: "7",
     preserve_interword_spaces: "0"
 }
