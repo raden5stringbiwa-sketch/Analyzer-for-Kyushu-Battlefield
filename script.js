@@ -314,7 +314,7 @@ function cropScoreTime(){
         scoreArea.width,
         scoreArea.height
     );
-const imageData = ctx.getImageData(
+/*const imageData = ctx.getImageData(
     0,
     0,
     canvas.width,
@@ -340,7 +340,7 @@ for(let i = 0; i < data.length; i += 4){
         data[i+1] = 0;
         data[i+2] = 0;
     }
-}
+}*/
 
 ctx.putImageData(imageData,0,0);
     scoreTimeCanvas = canvas;
