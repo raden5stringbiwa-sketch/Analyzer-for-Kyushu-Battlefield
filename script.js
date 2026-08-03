@@ -82,10 +82,10 @@ const areas = [
     point: 28,
     unlockTime: 2100,
     maxPoint: 25200,
-    x:562,
-    y:62,
-    width:101,
-    height:48
+    x:701,
+    y:76,
+    width:121,
+    height:63
   },
   {
     name: "北_2城",
