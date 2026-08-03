@@ -581,9 +581,18 @@ const totalGameTime = 3600;
 
 const elapsedTime =
     totalGameTime - remainingSeconds;
+
+
+// ★経過時間表示
+const elapsedMin = Math.floor(elapsedTime / 60);
+const elapsedSec = elapsedTime % 60;
+
+const elapsedText =
+    elapsedMin + ":" + String(elapsedSec).padStart(2,"0");
+
+
 // 元画像
 const img = preview;
-
 
 
 // OCR（まだ仮）
