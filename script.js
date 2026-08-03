@@ -58,10 +58,10 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x:383,
-    y:271,
-    width:70,
-    height:38
+    x:478,
+    y:341,
+    width:87,
+    height:48
   },
     
   {
