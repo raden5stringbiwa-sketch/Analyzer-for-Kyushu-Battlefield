@@ -494,6 +494,9 @@ const judgeResult =
 const reportResult =
     document.getElementById("reportResult");
 
+const elapsedDisplay =
+    document.getElementById("elapsedDisplay");
+
 const scoreResult =
     document.getElementById("scoreResult");
 
@@ -759,6 +762,8 @@ report += "終了時予測\n";
 report += "青：" + Math.floor(blueFinal).toLocaleString() + "\n";
 report += "赤：" + Math.floor(redFinal).toLocaleString();
 
+    elapsedDisplay.textContent =
+    "経過時間：" + elapsedText;
 reportResult.textContent = report;
 
 
