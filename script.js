@@ -116,10 +116,10 @@ const areas = [
     point: 10,
     unlockTime: 420,
     maxPoint: null,
-    x:665,
-    y:338,
-    width:72,
-    height:40
+    x:826,
+    y:425,
+    width:93,
+    height:48
   },
   {
     name: "中央拠点",
