@@ -538,7 +538,7 @@ for (const area of remainAreas) {
 
  
 // ★4倍拡大
-const scale = 4;
+/*const scale = 4;
 
 const bigCanvas = document.createElement("canvas");
 
@@ -556,7 +556,7 @@ bigCtx.drawImage(
     bigCanvas.width,
     bigCanvas.height
 );
-
+*/
 document.body.appendChild(bigCanvas);
 
 
