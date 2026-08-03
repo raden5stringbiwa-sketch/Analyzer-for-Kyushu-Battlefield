@@ -22,10 +22,10 @@ const measureCanvas =
     document.getElementById("measureCanvas");
 
 const scoreArea = {
-    x: 560,
-    y: 69,
-    width: 93,
-    height: 25
+    x:695,
+    y:92,
+    width:125,
+    height:30
 };
 const blueScoreArea = {
     x:679,
