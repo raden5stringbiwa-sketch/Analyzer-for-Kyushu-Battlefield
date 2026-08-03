@@ -11,7 +11,7 @@ const scorePreview =
     document.getElementById("scorePreview");
 
 const timeResult =
-    document.getElementById("time");
+    document.getElementById("elapsedTime");
 
 let blueScore = 0;
 let redScore = 0;
