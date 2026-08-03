@@ -11,7 +11,7 @@ const scorePreview =
     document.getElementById("scorePreview");
 
 const timeResult =
-    document.getElementById("timeResult");
+    document.getElementById("time");
 
 let blueScore = 0;
 let redScore = 0;
@@ -588,7 +588,7 @@ const result =
         canvas,
         "eng",
 {
-    tessedit_char_whitelist: "0123456789:",
+    tessedit_char_whitelist: "0123456789/",
     tessedit_pageseg_mode: "7",
     preserve_interword_spaces: "0"
 }
