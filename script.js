@@ -398,7 +398,7 @@ function cropBlueScore(){
 
     blueScoreCanvas = canvas;
 
-    document.body.appendChild(canvas);
+   //document.body.appendChild(canvas);
 
 }
 let redScoreCanvas;
@@ -426,7 +426,7 @@ function cropRedScore(){
 
     redScoreCanvas = canvas;
 
-    document.body.appendChild(canvas);
+    //*document.body.appendChild(canvas);
 
 }
 
@@ -534,7 +534,7 @@ analyzeButton.addEventListener("click", async function () {
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
-for (const area of remainAreas) {
+/*for (const area of remainAreas) {
 
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
