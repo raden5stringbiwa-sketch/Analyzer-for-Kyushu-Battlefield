@@ -256,6 +256,21 @@ body {
     overflow-y: auto;
     z-index: 1000;
 }
+.report-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.report-title h3{
+    margin:0;
+}
+
+#elapsedTime{
+    font-size:14px;
+    color:#7CFC00;
+}
+
 
 .container {
     width: auto;
