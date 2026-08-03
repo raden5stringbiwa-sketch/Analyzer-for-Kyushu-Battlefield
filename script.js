@@ -304,17 +304,16 @@ function cropScoreTime(){
     canvas.height = scoreArea.height;
 
 ctx.drawImage(
-    preview,
-    area.x,
-    area.y,
-    area.width,
-    area.height,
+    scorePreview,
+    scoreArea.x,
+    scoreArea.y,
+    scoreArea.width,
+    scoreArea.height,
     0,
     0,
-    area.width,
-    area.height
+    scoreArea.width,
+    scoreArea.height
 );
-
 // ★白文字だけ残す
 const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 const data = imageData.data;
@@ -367,7 +366,7 @@ for(let i = 0; i < data.length; i += 4){
 // ctx.putImageData(imageData,0,0);
 scoreTimeCanvas = canvas;
 
-document.body.appendChild(canvas);
+//document.body.appendChild(canvas);
 
 setTimeout(() => {
     readTime();
