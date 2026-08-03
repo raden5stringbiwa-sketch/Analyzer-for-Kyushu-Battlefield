@@ -184,30 +184,30 @@ const remainAreas = [
     {
         name:"北1城",
         x:699,
-        y:114,
+        y:117,
         width:61,
-        height:24
+        height:22
     },
     {
         name:"北2城",
         x:699,
-        y:283,
+        y:285,
         width:61,
-        height:24
+        height:22
     },
     {
         name:"南3城",
         x:699,
-        y:620,
+        y:622,
         width:61,
-        height:24
+        height:22
     },
     {
         name:"南4城",
         x:699,
         y:790,
         width:61,
-        height:24
+        height:22
     }
 ];
 let remainPointResults = [];
