@@ -342,8 +342,8 @@ for(let i = 0; i < data.length; i += 4){
     }
 }*/
 
-ctx.putImageData(imageData,0,0);
-    scoreTimeCanvas = canvas;
+// ctx.putImageData(imageData,0,0);
+scoreTimeCanvas = canvas;
 
 document.body.appendChild(canvas);
 
