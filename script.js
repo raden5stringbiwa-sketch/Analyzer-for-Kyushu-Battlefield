@@ -658,7 +658,7 @@ output += "🔵青 : " + blueScore.toLocaleString() + "\n";
 output += "🔴赤 : " + redScore.toLocaleString() + "\n";
 output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";*/
 
-const finalSeconds = remainingSeconds + 1;
+const finalSeconds = remainingSeconds - 1;
 
 let blueAdd = 0;
 let redAdd = 0;
