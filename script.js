@@ -557,13 +557,13 @@ bigCtx.drawImage(
     bigCanvas.height
 );
 */
-document.body.appendChild(bigCanvas);
+document.body.appendChild(canvas);
 
 
-// 拡大画像をOCR
+// 元画像をOCR
 const result =
     await Tesseract.recognize(
-        bigCanvas,
+        canvas,
         "eng",
 {
     tessedit_char_whitelist: "0123456789:",
