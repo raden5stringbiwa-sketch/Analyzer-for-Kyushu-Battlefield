@@ -544,16 +544,16 @@ for (const area of remainAreas) {
     canvas.height = area.height;
 
     ctx.drawImage(
-        preview,
-        area.x,
-        area.y,
-        area.width,
-        area.height,
-        0,
-        0,
-        area.width,
-        area.height
-    );
+    scorePreview,
+    scoreArea.x,
+    scoreArea.y,
+    scoreArea.width,
+    scoreArea.height,
+    0,
+    0,
+    scoreArea.width,
+    scoreArea.height
+);
   
     document.body.appendChild(canvas);
 
