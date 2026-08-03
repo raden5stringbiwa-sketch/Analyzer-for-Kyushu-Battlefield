@@ -82,7 +82,7 @@ const areas = [
     point: 28,
     unlockTime: 2100,
     maxPoint: 25200,
-    x:701,
+    x:700,
     y:76,
     width:121,
     height:63
@@ -93,10 +93,10 @@ const areas = [
     point: 28,
     unlockTime: 900,
     maxPoint: 25200,
-    x:562,
-    y:197,
-    width:101,
-    height:48
+    x:700,
+    y:247,
+    width:121,
+    height:63
   },
 
   {
