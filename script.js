@@ -83,7 +83,7 @@ const areas = [
     unlockTime: 2100,
     maxPoint: 25200,
     x:700,
-    y:76,
+    y:78,
     width:121,
     height:63
   },
@@ -127,10 +127,10 @@ const areas = [
     point: 36,
     unlockTime: 1620,
     maxPoint: 65000,
-    x:558,
-    y:329,
-    width:104,
-    height:53
+    x:700,
+    y:413,
+    width:128,
+    height:46
   },
   {
     name: "南_3城",
@@ -138,10 +138,10 @@ const areas = [
     point: 28,
     unlockTime: 900,
     maxPoint: 25200,
-    x:562,
-    y:465,
-    width:101,
-    height:48
+    x:700,
+    y:578,
+    width:121,
+    height:63
   },
   {
     name: "南_4城",
@@ -149,10 +149,10 @@ const areas = [
     point: 28,
     unlockTime: 2100,
     maxPoint: 25200,
-    x:562,
-    y:599,
-    width:101,
-    height:48
+    x:700,
+    y:748,
+    width:121,
+    height:63
   },
 
   {
