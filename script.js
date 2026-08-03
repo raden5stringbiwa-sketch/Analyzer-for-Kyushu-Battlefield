@@ -653,10 +653,10 @@ output += "🔵青 : " + bluePerSec + "点/秒\n";
 output += "🔴赤 : " + redPerSec + "点/秒\n";
 output += "差 : " + (bluePerSec - redPerSec) + "点/秒\n";
 
-output += "\n現在ポイント\n";
+/*output += "\n現在ポイント\n";
 output += "🔵青 : " + blueScore.toLocaleString() + "\n";
 output += "🔴赤 : " + redScore.toLocaleString() + "\n";
-output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";
+output += "現在差 : " + (blueScore - redScore).toLocaleString() + "\n";*/
 
 const finalSeconds = remainingSeconds + 1;
 
@@ -743,8 +743,11 @@ report += (blueFinal > redFinal)
     ? "🔴赤勝利予測\n\n"
     : "引き分け予測\n\n";
 
+report += "現在ポイント\n";
+report += "🔵青：" + blueScore.toLocaleString() + "\n";
+report += "🔴赤：" + redScore.toLocaleString() + "\n";
 report += "現在差：" +
-    (blueScore - redScore).toLocaleString() + "\n";
+    (blueScore - redScore).toLocaleString() + "\n\n";
 
 report += "毎秒差：" +
     (bluePerSec - redPerSec) + "点/秒\n\n";
