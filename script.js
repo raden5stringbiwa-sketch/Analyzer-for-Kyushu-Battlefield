@@ -677,13 +677,15 @@ for (const area of areas) {
 
 const blueFinal = blueScore + blueAdd;
 const redFinal = redScore + redAdd;
-output += "\n勝敗予測\n";
-
 // 逆転に必要な毎秒ポイント
 const currentDiff = blueScore - redScore;
 const rateDiff = bluePerSec - redPerSec;
+    
+/*output += "\n勝敗予測\n";*/
 
-output += "\n逆転条件\n";
+
+
+/*output += "\n逆転条件\n";
 
 if (currentDiff > 0) {
     // 青が勝っている → 赤が必要
@@ -716,7 +718,7 @@ else{
 output += "\n終了時予測\n";
 output += "青 : " + Math.floor(blueFinal).toLocaleString() + "\n";
 output += "赤 : " + Math.floor(redFinal).toLocaleString() + "\n";
-    
+*/    
 // 左側（判定）
 judgeResult.textContent = output;
 
