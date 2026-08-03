@@ -738,9 +738,9 @@ judgeResult.textContent = output;
 let report = "";
 
 report += (blueFinal > redFinal)
-    ? "青勝利予測\n\n"
+    ? "🔵青勝利予測\n\n"
     : (redFinal > blueFinal)
-    ? "赤勝利予測\n\n"
+    ? "🔴赤勝利予測\n\n"
     : "引き分け予測\n\n";
 
 report += "現在差：" +
@@ -759,8 +759,8 @@ else if (currentDiff < 0) {
 }
 
 report += "終了時予測\n";
-report += "青：" + Math.floor(blueFinal).toLocaleString() + "\n";
-report += "赤：" + Math.floor(redFinal).toLocaleString();
+report += "🔵青：" + Math.floor(blueFinal).toLocaleString() + "\n";
+report += "🔴赤：" + Math.floor(redFinal).toLocaleString();
 
     elapsedDisplay.textContent =
     "経過時間：" + elapsedText;
