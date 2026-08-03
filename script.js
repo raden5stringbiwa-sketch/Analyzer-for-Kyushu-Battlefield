@@ -161,10 +161,11 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x:768,
-    y:406,
-    width:70,
-    height:38
+    x:955,
+    y:508,
+    width:93,
+    height:49
+      
   },
   {
     name: "東_療養所",
@@ -172,10 +173,10 @@ const areas = [
     point: 2,
     unlockTime: 0,
     maxPoint: null,
-    x:757,
-    y:271,
-    width:89,
-    height:38
+    x:945,
+    y:338,
+    width:112,
+    height:49
   }
 ];
 // ★ここから追加
