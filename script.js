@@ -82,6 +82,7 @@ const areas = [
     point: 28,
     unlockTime: 2100,
     maxPoint: 25200,
+    remainingPoint: 25200,
     x:700,
     y:78,
     width:121,
@@ -93,6 +94,7 @@ const areas = [
     point: 28,
     unlockTime: 900,
     maxPoint: 25200,
+    remainingPoint: 25200,  
     x:700,
     y:247,
     width:121,
@@ -127,6 +129,7 @@ const areas = [
     point: 36,
     unlockTime: 1620,
     maxPoint: 65000,
+    remainingPoint: null,
     x:700,
     y:413,
     width:128,
@@ -138,6 +141,7 @@ const areas = [
     point: 28,
     unlockTime: 900,
     maxPoint: 25200,
+    remainingPoint: 25200,
     x:700,
     y:578,
     width:121,
@@ -149,6 +153,7 @@ const areas = [
     point: 28,
     unlockTime: 2100,
     maxPoint: 25200,
+    remainingPoint: 25200,
     x:700,
     y:748,
     width:121,
@@ -619,20 +624,27 @@ for (const area of areas){
     const owner =
         detectOwner(canvas, area);
 
-    area.owner = owner;
+area.owner = owner;
+
+if(area.remainingPoint === 0){
+    area.active = false;
+}
+else{
+    area.active = true;
+}
 
     const unlocked =
     elapsedTime >= area.unlockTime;
 
 if(unlocked){
 
-    if(owner === "青"){
-        bluePerSec += area.point;
-    }
+if(owner === "青" && area.active){
+    bluePerSec += area.point;
+}
 
-    if(owner === "赤"){
-        redPerSec += area.point;
-    }
+if(owner === "赤" && area.active){
+    redPerSec += area.point;
+}
 
 }
 
