@@ -666,7 +666,7 @@ for (const area of remainAreas) {
         area.height
     );
   
-    document.body.appendChild(canvas);
+    //document.body.appendChild(canvas);
 
 
  
