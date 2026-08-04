@@ -265,7 +265,7 @@ imageInput.addEventListener("change", function () {
         0
     );
 
-    readRemainPoints();
+    //readRemainPoints();
 
 };
 
