@@ -495,6 +495,11 @@ scoreResult.textContent =
 }
 async function readRemainPoints(){
 
+    const previewBox =
+        document.getElementById("remainPreview");
+
+    previewBox.innerHTML = "";
+
     for(const area of remainAreas){
 
         const canvas = document.createElement("canvas");
@@ -578,8 +583,8 @@ function showRemainImages(){
             area.width,
             area.height
         );
-
-        document.body.appendChild(canvas);
+        
+        document.getElementById("remainPreview").appendChild(canvas);
 
     }
 
