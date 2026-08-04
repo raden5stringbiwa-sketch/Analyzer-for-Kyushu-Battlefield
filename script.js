@@ -487,7 +487,7 @@ document.getElementById("inputRedScore").value =
 scoreResult.textContent =
     "青スコア：" + blueScore.toLocaleString() +
     "\n赤スコア：" + redScore.toLocaleString();
-
+}
 function timeToSeconds(time){
 
     // 全角コロンを半角に変換
