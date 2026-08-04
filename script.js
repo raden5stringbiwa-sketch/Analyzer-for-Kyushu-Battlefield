@@ -518,6 +518,21 @@ analyzeButton.addEventListener("click", async function () {
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
+    // 残ポイント入力を反映
+areas.forEach(area => {
+
+    const input =
+        document.getElementById(
+            "remain_" + area.name
+        );
+
+    if(input){
+        area.remainingPoint =
+            Number(input.value);
+    }
+
+});
+    
 for (const area of remainAreas) {
 
     const canvas = document.createElement("canvas");
