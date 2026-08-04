@@ -251,7 +251,7 @@ imageInput.addEventListener("change", function () {
     if (!file) return;
 
     const reader = new FileReader();
-    preview.onload = function(){
+   preview.onload = function(){
 
     measureCanvas.width =
         preview.naturalWidth;
@@ -264,6 +264,8 @@ imageInput.addEventListener("change", function () {
         0,
         0
     );
+
+    readRemainPoints();
 
 };
 
@@ -477,6 +479,50 @@ async function readScore(){
     redScore
 });
 
+async function readRemainPoints(){
+
+    for(const area of remainAreas){
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = area.width;
+        canvas.height = area.height;
+
+
+        ctx.drawImage(
+            preview,
+            area.x,
+            area.y,
+            area.width,
+            area.height,
+            0,
+            0,
+            area.width,
+            area.height
+        );
+
+
+        const result =
+            await Tesseract.recognize(
+                canvas,
+                "eng",
+                {
+                    tessedit_char_whitelist:"0123456789/",
+                    tessedit_pageseg_mode:"7"
+                }
+            );
+
+
+        console.log(
+            area.name,
+            result.data.text
+        );
+
+    }
+
+}
+    
 document.getElementById("inputBlueScore").value =
     blueScore;
 
@@ -488,6 +534,7 @@ scoreResult.textContent =
     "青スコア：" + blueScore.toLocaleString() +
     "\n赤スコア：" + redScore.toLocaleString();
 }
+
 function timeToSeconds(time){
 
     // 全角コロンを半角に変換
