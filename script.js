@@ -266,7 +266,7 @@ imageInput.addEventListener("change", function () {
     );
 
     //readRemainPoints();
-
+       showRemainImages();
 };
 
     reader.onload = function (e) {
