@@ -556,7 +556,34 @@ const input =
         }
     }
 }
-    
+
+function showRemainImages(){
+
+    for(const area of remainAreas){
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = area.width;
+        canvas.height = area.height;
+
+        ctx.drawImage(
+            preview,
+            area.x,
+            area.y,
+            area.width,
+            area.height,
+            0,
+            0,
+            area.width,
+            area.height
+        );
+
+        document.body.appendChild(canvas);
+
+    }
+
+}
 
 function timeToSeconds(time){
 
