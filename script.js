@@ -478,6 +478,20 @@ async function readScore(){
     blueScore,
     redScore
 });
+
+document.getElementById("inputBlueScore").value =
+    blueScore;
+
+document.getElementById("inputRedScore").value =
+    redScore;
+
+
+scoreResult.textContent =
+    "青スコア：" + blueScore.toLocaleString() +
+    "\n赤スコア：" + redScore.toLocaleString();
+
+
+    
 }
 async function readRemainPoints(){
 
@@ -514,7 +528,7 @@ async function readRemainPoints(){
             );
 
 
-  console.log(
+console.log(
     area.name,
     result.data.text
 );
@@ -532,19 +546,17 @@ const target =
 if(target){
     target.remainingPoint = value;
 }
+
+const input =
+    document.getElementById(
+        "remain_" + area.name
+    );
+        if(input){
+            input.value = value;
+        }
+    }
 }
     
-document.getElementById("inputBlueScore").value =
-    blueScore;
-
-document.getElementById("inputRedScore").value =
-    redScore;
-
-
-scoreResult.textContent =
-    "青スコア：" + blueScore.toLocaleString() +
-    "\n赤スコア：" + redScore.toLocaleString();
-}
 
 function timeToSeconds(time){
 
