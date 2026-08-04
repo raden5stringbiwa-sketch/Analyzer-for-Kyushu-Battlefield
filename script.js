@@ -215,6 +215,15 @@ const remainAreas = [
         height:22
     }
 ];
+
+const remainInputs = {
+    "北1城": document.getElementById("remain_北_1城"),
+    "北2城": document.getElementById("remain_北_2城"),
+    "南3城": document.getElementById("remain_南_3城"),
+    "南4城": document.getElementById("remain_南_4城")
+};
+
+
 let remainPointResults = [];
 
 const cropAreaElement =
