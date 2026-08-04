@@ -442,7 +442,8 @@ remainingSeconds =
 timeResult.textContent =
     "残り時間：" + remainingTime +
     "（" + remainingSeconds + "秒）";
-
+document.getElementById("inputRemainTime").value =
+    remainingSeconds;
 }
 async function readScore(){
 
@@ -471,15 +472,21 @@ async function readScore(){
         ) || 0;
 
 
-    console.log({
-        blueScore,
-        redScore
-    });
-    scoreResult.textContent =
-        "青スコア：" + blueScore.toLocaleString() +
-        "\n赤スコア：" + redScore.toLocaleString();
-}
+   console.log({
+    blueScore,
+    redScore
+});
 
+document.getElementById("inputBlueScore").value =
+    blueScore;
+
+document.getElementById("inputRedScore").value =
+    redScore;
+
+
+scoreResult.textContent =
+    "青スコア：" + blueScore.toLocaleString() +
+    "\n赤スコア：" + redScore.toLocaleString();
 
 function timeToSeconds(time){
 
