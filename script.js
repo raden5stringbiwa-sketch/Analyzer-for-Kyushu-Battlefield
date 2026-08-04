@@ -478,7 +478,7 @@ async function readScore(){
     blueScore,
     redScore
 });
-
+}
 async function readRemainPoints(){
 
     for(const area of remainAreas){
@@ -514,13 +514,24 @@ async function readRemainPoints(){
             );
 
 
-        console.log(
-            area.name,
-            result.data.text
-        );
+  console.log(
+    area.name,
+    result.data.text
+);
 
-    }
+const value =
+    Number(
+        result.data.text.replace(/\D/g,"")
+    ) || 0;
 
+const target =
+    areas.find(
+        a => a.name === area.name
+    );
+
+if(target){
+    target.remainingPoint = value;
+}
 }
     
 document.getElementById("inputBlueScore").value =
