@@ -85,7 +85,7 @@ const areas = [
     remainingPoint: 25200,
     x:700,
     y:78,
-    width:121,
+    width:125,
     height:63
   },
   {
@@ -97,7 +97,7 @@ const areas = [
     remainingPoint: 25200,  
     x:700,
     y:247,
-    width:121,
+    width:125,
     height:63
   },
 
@@ -144,7 +144,7 @@ const areas = [
     remainingPoint: 25200,
     x:700,
     y:578,
-    width:121,
+    width:125,
     height:63
   },
   {
@@ -156,7 +156,7 @@ const areas = [
     remainingPoint: 25200,
     x:700,
     y:748,
-    width:121,
+    width:125,
     height:63
   },
 
@@ -190,28 +190,28 @@ const remainAreas = [
         name:"北_1城",
         x:689,
         y:116,
-        width:100,
+        width:140,
         height:24
     },
     {
         name:"北_2城",
         x:689,
         y:284,
-        width:100,
+        width:140,
         height:24
     },
     {
         name:"南_3城",
         x:689,
         y:621,
-        width:100,
+        width:140,
         height:24
     },
     {
         name:"南_4城",
         x:689,
         y:789,
-        width:100,
+        width:140,
         height:24
     }
 ];
