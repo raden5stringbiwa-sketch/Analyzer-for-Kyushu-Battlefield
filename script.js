@@ -28,15 +28,15 @@ const scoreArea = {
     height:30
 };
 const blueScoreArea = {
-    x:675,
+    x:660,
     y:30,
-    width:93,
+    width:108,
     height:30
 };
 const redScoreArea = {
     x: 938,
     y: 30,
-    width: 93,
+    width: 108,
     height: 30
 };
 
