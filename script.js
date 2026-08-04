@@ -188,31 +188,31 @@ const areas = [
 const remainAreas = [
     {
         name:"北_1城",
-        x:699,
-        y:117,
-        width:61,
-        height:22
+        x:689,
+        y:116,
+        width:71,
+        height:24
     },
     {
         name:"北_2城",
-        x:699,
-        y:285,
-        width:61,
-        height:22
+        x:689,
+        y:284,
+        width:71,
+        height:24
     },
     {
         name:"南_3城",
-        x:699,
-        y:622,
-        width:61,
-        height:22
+        x:689,
+        y:621,
+        width:71,
+        height:24
     },
     {
         name:"南_4城",
-        x:699,
-        y:790,
-        width:61,
-        height:22
+        x:689,
+        y:789,
+        width:71,
+        height:24
     }
 ];
 
