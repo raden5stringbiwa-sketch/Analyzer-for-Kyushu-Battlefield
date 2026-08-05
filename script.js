@@ -583,13 +583,20 @@ function showRemainImages(){
             area.width,
             area.height
         );
-        
-        document.getElementById("remainPreview").appendChild(canvas);
+
+        const box =
+            document.getElementById(
+                "remainPreview_" + area.name
+            );
+
+        if(box){
+            box.innerHTML = "";
+            box.appendChild(canvas);
+        }
 
     }
 
 }
-
 function timeToSeconds(time){
 
     // 全角コロンを半角に変換
