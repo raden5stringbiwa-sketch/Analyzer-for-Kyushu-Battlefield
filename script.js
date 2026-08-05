@@ -654,6 +654,12 @@ const remainText =
 
 remainingSeconds =
     timeToSeconds(remainText);
+
+blueScore =
+    Number(document.getElementById("inputBlueScore").value) || 0;
+
+redScore =
+    Number(document.getElementById("inputRedScore").value) || 0;
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
@@ -716,7 +722,7 @@ bigCtx.drawImage(
     bigCanvas.height
 );
 */
-document.body.appendChild(canvas);
+//document.body.appendChild(canvas);
 
 
 // 元画像をOCR
