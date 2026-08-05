@@ -445,7 +445,7 @@ timeResult.textContent =
     "残り時間：" + remainingTime +
     "（" + remainingSeconds + "秒）";
 document.getElementById("inputRemainTime").value =
-    remainingSeconds;
+    remainingTime;
 }
 async function readScore(){
 
