@@ -278,3 +278,23 @@ body {
     margin-right: 340px;
     margin-top: 20px;
 }
+.remain-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.remain-row span {
+    width: 50px;
+}
+
+.remain-row input {
+    width: 90px;
+}
+
+.remain-row canvas {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+}
