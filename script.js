@@ -604,16 +604,26 @@ function timeToSeconds(time){
 
     const parts = time.split(":");
 
-    if(parts.length !== 3){
-        return 0;
+    // 分:秒
+    if(parts.length === 2){
+
+        const min = parseInt(parts[0]) || 0;
+        const sec = parseInt(parts[1]) || 0;
+
+        return min * 60 + sec;
     }
 
-    const hour = parseInt(parts[0]) || 0;
-    const min = parseInt(parts[1]) || 0;
-    const sec = parseInt(parts[2]) || 0;
+    // 時:分:秒（OCR用）
+    if(parts.length === 3){
 
-    return hour * 3600 + min * 60 + sec;
+        const hour = parseInt(parts[0]) || 0;
+        const min = parseInt(parts[1]) || 0;
+        const sec = parseInt(parts[2]) || 0;
 
+        return hour * 3600 + min * 60 + sec;
+    }
+
+    return 0;
 }
 const analyzeButton =
     document.getElementById("analyzeButton");
@@ -639,7 +649,11 @@ analyzeButton.addEventListener("click", async function () {
         return;
 
     }
+const remainText =
+    document.getElementById("inputRemainTime").value;
 
+remainingSeconds =
+    timeToSeconds(remainText);
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
