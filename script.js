@@ -361,7 +361,7 @@ for(let i = 0; i < data.length; i += 4){
 // ctx.putImageData(imageData,0,0);
 scoreTimeCanvas = canvas;
 
-document.body.appendChild(canvas);
+//document.body.appendChild(canvas);
 
 setTimeout(() => {
     readTime();
@@ -393,7 +393,7 @@ function cropBlueScore(){
 
     blueScoreCanvas = canvas;
 
-    document.body.appendChild(canvas);
+    //document.body.appendChild(canvas);
 
 }
 let redScoreCanvas;
@@ -421,7 +421,7 @@ function cropRedScore(){
 
     redScoreCanvas = canvas;
 
-    document.body.appendChild(canvas);
+    //document.body.appendChild(canvas);
 
 }
 
