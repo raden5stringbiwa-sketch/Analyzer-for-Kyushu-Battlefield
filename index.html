@@ -66,24 +66,23 @@
         accept="image/*">
  <h3>スコア補正</h3>
 
-    青ポイント
-    <input 
-        id="inputBlueScore"
-        type="number"
-        value="0"><br>
+<div class="score-row">
+    <div id="scorePreview_blue"></div>
+    <span>青ポイント</span>
+    <input id="inputBlueScore" type="number" value="0">
+</div>
 
-    赤ポイント
-    <input 
-        id="inputRedScore"
-        type="number"
-        value="0"><br>
+<div class="score-row">
+    <div id="scorePreview_red"></div>
+    <span>赤ポイント</span>
+    <input id="inputRedScore" type="number" value="0">
+</div>
 
-残り時間（分:秒）
-<input
-    id="inputRemainTime"
-    type="text"
-    value="60:00"><br>
-
+<div class="score-row">
+    <div id="scorePreview_time"></div>
+    <span>残り時間</span>
+    <input id="inputRemainTime" type="text" value="60:00">
+</div>
 
 
     <button id="analyzeButton">
