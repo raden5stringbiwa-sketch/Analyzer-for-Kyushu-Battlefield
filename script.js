@@ -231,7 +231,6 @@ const cropAreaElement =
 
 
 
-
 areas.forEach((area, index) => {
 
     area.canvas = "canvas_" + index;
