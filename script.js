@@ -361,6 +361,18 @@ for(let i = 0; i < data.length; i += 4){
 // ctx.putImageData(imageData,0,0);
 scoreTimeCanvas = canvas;
 
+const box =
+    document.getElementById("scorePreview_time");
+
+if(box){
+    box.innerHTML = "";
+    box.appendChild(canvas);
+}
+
+setTimeout(() => {
+    readTime();
+}, 100);
+
 //document.body.appendChild(canvas);
 
 setTimeout(() => {
@@ -391,7 +403,15 @@ function cropBlueScore(){
         blueScoreArea.height
     );
 
-    blueScoreCanvas = canvas;
+   blueScoreCanvas = canvas;
+
+const box =
+    document.getElementById("scorePreview_blue");
+
+if(box){
+    box.innerHTML = "";
+    box.appendChild(canvas);
+}
 
     //document.body.appendChild(canvas);
 
@@ -419,7 +439,15 @@ function cropRedScore(){
         redScoreArea.height
     );
 
-    redScoreCanvas = canvas;
+  redScoreCanvas = canvas;
+
+const box =
+    document.getElementById("scorePreview_red");
+
+if(box){
+    box.innerHTML = "";
+    box.appendChild(canvas);
+}
 
     //document.body.appendChild(canvas);
 
