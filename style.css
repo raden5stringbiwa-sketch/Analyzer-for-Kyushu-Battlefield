@@ -298,3 +298,23 @@ body {
     height: auto;
     border: 1px solid #ccc;
 }
+.score-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.score-row span {
+    width: 80px;
+}
+
+.score-row input {
+    width: 120px;
+}
+
+.score-row canvas {
+    width: 90px;
+    border: 1px solid #555;
+    image-rendering: pixelated;
+}
