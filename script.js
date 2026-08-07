@@ -28,7 +28,7 @@ const scoreArea = {
     height:30
 };
 const blueScoreArea = {
-    x:660,
+    x:668,
     y:30,
     width:108,
     height:30
