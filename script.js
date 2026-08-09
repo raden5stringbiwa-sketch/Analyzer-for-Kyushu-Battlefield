@@ -820,7 +820,11 @@ for (const area of areas){
         detectOwner(canvas, area);
 
 area.owner = owner;
-
+if(area.name === "中央拠点"){
+    console.log(area);
+}
+    
+    
 if(area.remainingPoint === 0){
     area.active = false;
 }
