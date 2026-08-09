@@ -676,12 +676,20 @@ analyzeButton.addEventListener("click", async function () {
         return;
 
     }
+
+    
 const remainText =
     document.getElementById("inputRemainTime").value;
-
+   
 remainingSeconds =
     timeToSeconds(remainText);
 
+    console.log("残り時間入力:", remainText);
+    console.log("remainingSeconds:", remainingSeconds);
+
+    judgeResult.textContent = "解析中・・・";
+    reportResult.textContent = "解析中・・・";
+    
 blueScore =
     Number(document.getElementById("inputBlueScore").value) || 0;
 
