@@ -128,7 +128,7 @@ const areas = [
     type: "拠点",
     point: 36,
     unlockTime: 1620,
-    maxPoint: 65000,
+    maxPoint: null,
     remainingPoint: null,
     x:700,
     y:413,
